@@ -1,52 +1,55 @@
 #include<stdio.h>
 #include<stdlib.h>
 struct node{
-int data;
-struct node *next;
+    int id;
+    double cgpa;
+    struct node *next;
 }*head;
-typedef struct node Nodal;
-
+typedef struct node node;
 void createNode(int n);
-void displayList();
+void diaplayNode();
+
+void createNode(int n)
+{
+    head =(node*)malloc(sizeof(node));
+    printf("Enter (id & CGPA) node 1 :");
+    scanf("%d %lf",&head->id ,&head->cgpa);
+    head->next = NULL;
+
+    node *newnode , *temp;
+    temp = head;
+    for(int i=2 ;i<=n ; i++)
+    {
+     newnode =(node*)malloc(sizeof(node));
+     printf("Enter (id & CGPA) node %d :",i);
+     scanf("%d %lf",&newnode->id ,& newnode->cgpa);
+
+     newnode->next = NULL;
+     temp->next = newnode;
+     temp=temp->next;
+    }
+}
+
+void displayNode()
+{
+ int j=1;
+ node *value = head;
+ while(value != NULL)
+ {
+    printf("Node %d Data :%d  %.2lf",j,value->id,value->cgpa);
+    printf("\n");
+    value= value->next;
+    j++;
+ }
+}
 
 int main()
 {
-  int n;
-  printf("Enter the number of nodes =");
-  scanf("%d",&n);
+    int n;
+    printf("Enter number of nodes =");
+    scanf("%d",&n);
 
-  createNode(n);
-  displayList();
-
+    createNode(n);
+    displayNode();
+    return 0;
 }
-
-void createNode(int n)
-{   Nodal *head;
-    head = (Nodal*)malloc(sizeof(Nodal));
-    printf("Enter data node 1=");
-    scanf("%d",&head->data);
-    head->next = NULL;
-
-    Nodal *newNode, *temp;
-    for(int i=2; i<=n ;i++)
-    {
-        newNode=(Nodal*)malloc(sizeof(Nodal));
-
-        printf("Enter %d node data=",i);
-        scanf("%d",&newNode->data);
-
-        newNode->next = NULL;
-        temp->next = newNode;
-        temp = temp->next;
-    }
-}
-void displayList()
-{
-    Nodal *current = head;
-    while (current != NULL) {
-        printf("%d ", current->data);
-        current = current->next;
-    }
-    printf("\n");
-}
-
