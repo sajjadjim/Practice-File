@@ -22,7 +22,6 @@ int main()
 
     printf("The linked list elements are: ");
     displayList();
-
     return 0;
 }
 
