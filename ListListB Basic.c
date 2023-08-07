@@ -26,6 +26,7 @@ int main()
         printf("%d \n",a->data);
         a = a->next;  // Increase the value and change replacement the value
     }
+    printf("NULL");
    return 0;
 }
 
