@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include<stdlib.h>
 #define SIZE 5
+
 //Function prototype
 void enQueue(int);
 void deQueue();
