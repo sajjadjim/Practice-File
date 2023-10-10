@@ -2,6 +2,7 @@
 #include <stdlib.h>
 
 // Define the structure for a node in the doubly linked list
+
 struct Node {
     int data;
     struct Node* prev;
