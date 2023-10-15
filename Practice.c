@@ -2,6 +2,7 @@
 #include<stdlib.h>
 
 struct node{
+
     int id;
     double cgpa;
     struct node *next;
