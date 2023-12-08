@@ -17,7 +17,7 @@ int main()
 
     int n;
     cout <<"Enter number of nodes =";
-    cin >> n;
+    cin  >> n;
 
     createNode(n);
     return 0;
