@@ -7,7 +7,7 @@ int data;
 struct node *next;
 }*head;
 typedef struct node node ;
-
+ 
 void createNode(int n)
 {
 head =(node*)malloc (sizeof(node));
