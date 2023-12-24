@@ -3,7 +3,7 @@
 struct Node{
     int data;
     struct Node *next;
-
+ 
 }*a,*b,*c;  //*a,*b,*c;
 typedef struct Node Nodal;
 int main()
